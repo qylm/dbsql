@@ -1,0 +1,53 @@
+（内部管理：员工管理、角色管理）
+dd_role		——角色表
+dd_staff	——权限表
+dd_rolestaff	——权限关联表
+dd_employees	——员工表
+
+（财务管理：转账记录、充值记录）
+dd_collection	——转账记录表
+dd_rechargerecord	——充值表
+
+（用户管理：乘客管理、司机管理）
+dd_user 	——用户表
+dd_userinfo	——用户详情表
+dd_nameauthentication	——实名认证信息表
+dd_add		——地址表
+dd_cargps	——车主定位表
+dd_carinfo	——车辆信息表
+dd_carowner	——车主信息表
+dd_carphoto	——车辆照片信息表
+dd_cartype	——运营类型表：快车、顺风车等
+
+（订单管理：订单详情、计费规则）
+dd_operation	——订单操作表
+dd_orderinfo	——正式订单信息表
+dd_applyorder	——订单详情表
+dd_orderpay	——订单支付表
+dd_orderrule	——订单计费规则表
+
+（评价管理）
+dd_appraise	——评论表
+（投诉管理）
+dd_complaints	——投诉表
+
+（活动管理：活动详情、活动规则）
+dd_activity	——活动规则表
+dd_correlate	——活动详情表
+
+
+（客服管理、消息管理）
+dd_usertoservicechatrecord	——用户客服聊天记录表
+dd_usertouserchatrecord		——用户用户聊天记录表
+
+（运营监控）
+dd_route	——路线详情表
+
+
+（数据统计）
+（操作日志）
+dd_log		——操作日志表
+
+
+dd_banner	——轮播图表
+dd_newsimg	——新闻图表

@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : dd
-Source Server Version : 50717
+Source Server         : hf1706
+Source Server Version : 50710
 Source Host           : localhost:3306
 Source Database       : dd_car
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2017-12-23 10:39:00
+Date: 2017-12-23 23:13:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -278,7 +278,7 @@ CREATE TABLE `dd_employees` (
 -- ----------------------------
 -- Records of dd_employees
 -- ----------------------------
-INSERT INTO `dd_employees` VALUES ('1', 'root', 'root', '1', '2017-12-23 10:32:58', '1');
+INSERT INTO `dd_employees` VALUES ('1', 'root', 'a12345', '1', '2017-12-23 10:32:58', '1');
 
 -- ----------------------------
 -- Table structure for dd_log
@@ -460,7 +460,7 @@ CREATE TABLE `dd_rolestaff` (
   KEY `d_staffid` (`d_staffid`),
   CONSTRAINT `dd_rolestaff_ibfk_1` FOREIGN KEY (`d_roleid`) REFERENCES `dd_role` (`d_id`),
   CONSTRAINT `dd_rolestaff_ibfk_2` FOREIGN KEY (`d_staffid`) REFERENCES `dd_staff` (`d_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dd_rolestaff
@@ -486,6 +486,15 @@ INSERT INTO `dd_rolestaff` VALUES ('18', '1', '18');
 INSERT INTO `dd_rolestaff` VALUES ('19', '1', '19');
 INSERT INTO `dd_rolestaff` VALUES ('20', '1', '20');
 INSERT INTO `dd_rolestaff` VALUES ('21', '1', '21');
+INSERT INTO `dd_rolestaff` VALUES ('22', '1', '22');
+INSERT INTO `dd_rolestaff` VALUES ('23', '1', '23');
+INSERT INTO `dd_rolestaff` VALUES ('24', '1', '24');
+INSERT INTO `dd_rolestaff` VALUES ('25', '1', '25');
+INSERT INTO `dd_rolestaff` VALUES ('26', '1', '26');
+INSERT INTO `dd_rolestaff` VALUES ('27', '1', '27');
+INSERT INTO `dd_rolestaff` VALUES ('28', '1', '28');
+INSERT INTO `dd_rolestaff` VALUES ('29', '1', '29');
+INSERT INTO `dd_rolestaff` VALUES ('30', '1', '30');
 
 -- ----------------------------
 -- Table structure for dd_route
@@ -518,7 +527,7 @@ CREATE TABLE `dd_staff` (
   PRIMARY KEY (`d_id`),
   KEY `d_fsid` (`d_fsid`),
   CONSTRAINT `dd_staff_ibfk_1` FOREIGN KEY (`d_fsid`) REFERENCES `dd_staff` (`d_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dd_staff
@@ -528,22 +537,31 @@ INSERT INTO `dd_staff` VALUES ('2', '内部管理', null, '1');
 INSERT INTO `dd_staff` VALUES ('3', '财务管理', null, '1');
 INSERT INTO `dd_staff` VALUES ('4', '用户管理', null, '1');
 INSERT INTO `dd_staff` VALUES ('5', '订单管理', '', '1');
-INSERT INTO `dd_staff` VALUES ('6', '评价管理', 'appraise', '1');
-INSERT INTO `dd_staff` VALUES ('7', '投诉管理', 'complaints', '1');
+INSERT INTO `dd_staff` VALUES ('6', '评价管理', '', '1');
+INSERT INTO `dd_staff` VALUES ('7', '投诉管理', '', '1');
 INSERT INTO `dd_staff` VALUES ('8', '活动管理', null, '1');
-INSERT INTO `dd_staff` VALUES ('9', '客服管理', 'service', '1');
-INSERT INTO `dd_staff` VALUES ('10', '消息管理', 'message', '1');
-INSERT INTO `dd_staff` VALUES ('11', '运营监控', 'operationmanager', '1');
-INSERT INTO `dd_staff` VALUES ('12', '数据统计', 'datastatistics', '1');
-INSERT INTO `dd_staff` VALUES ('13', '操作日志', 'operationlog', '1');
-INSERT INTO `dd_staff` VALUES ('14', '员工管理', 'staff', '2');
-INSERT INTO `dd_staff` VALUES ('15', '角色管理', 'role', '2');
-INSERT INTO `dd_staff` VALUES ('16', '转账记录', 'transferrecord', '3');
-INSERT INTO `dd_staff` VALUES ('17', '充值记录', 'rechargerecord', '3');
-INSERT INTO `dd_staff` VALUES ('18', '订单详情', 'orderinfo', '5');
-INSERT INTO `dd_staff` VALUES ('19', '计费规则', 'billingrule', '5');
-INSERT INTO `dd_staff` VALUES ('20', '活动详情', 'activityinfo', '8');
-INSERT INTO `dd_staff` VALUES ('21', '活动规则', 'activityrule', '8');
+INSERT INTO `dd_staff` VALUES ('9', '客服管理', '', '1');
+INSERT INTO `dd_staff` VALUES ('10', '消息管理', '', '1');
+INSERT INTO `dd_staff` VALUES ('11', '运营监控', '', '1');
+INSERT INTO `dd_staff` VALUES ('12', '数据统计', '', '1');
+INSERT INTO `dd_staff` VALUES ('13', '操作日志', '', '1');
+INSERT INTO `dd_staff` VALUES ('14', '员工管理', 'Inside/staff', '2');
+INSERT INTO `dd_staff` VALUES ('15', '角色管理', 'Inside/role', '2');
+INSERT INTO `dd_staff` VALUES ('16', '转账记录', 'Finance/transferrecord', '3');
+INSERT INTO `dd_staff` VALUES ('17', '充值记录', 'Finance/rechargerecord', '3');
+INSERT INTO `dd_staff` VALUES ('18', '订单详情', 'Order/orderinfo', '5');
+INSERT INTO `dd_staff` VALUES ('19', '计费规则', 'Order/billingrule', '5');
+INSERT INTO `dd_staff` VALUES ('20', '活动详情', 'Activity/activityinfo', '8');
+INSERT INTO `dd_staff` VALUES ('21', '活动规则', 'Activity/activityrule', '8');
+INSERT INTO `dd_staff` VALUES ('22', '评价管理', 'Appraise/appraise', '6');
+INSERT INTO `dd_staff` VALUES ('23', '投诉管理', 'Complaints/complaints', '7');
+INSERT INTO `dd_staff` VALUES ('24', '客服窗口', 'Servicechat/servicechat', '9');
+INSERT INTO `dd_staff` VALUES ('25', '消息管理', 'Message/message', '10');
+INSERT INTO `dd_staff` VALUES ('26', '运营监控', 'Operationmanager/operationmanager', '11');
+INSERT INTO `dd_staff` VALUES ('27', '数据统计', 'Datastatistics/datastatistics', '12');
+INSERT INTO `dd_staff` VALUES ('28', '操作日志', 'Operationlog/operationlog', '13');
+INSERT INTO `dd_staff` VALUES ('29', '乘客管理', 'Passenger/passenger', '4');
+INSERT INTO `dd_staff` VALUES ('30', '司机管理', 'Driver/driver', '4');
 
 -- ----------------------------
 -- Table structure for dd_user
